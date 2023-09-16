@@ -4,16 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+
+
 </head>
 <body>
+
     <nav>
-        <button onclick="goToDN()">Design</button>
-        <button onclick="goToWW()">Warp & Weft Def.</button>
-        <button onclick="goToSW()">Simple Weaves</button>
-        <button onclick="goToCW()">Combined Weaves</button>
-        <button onclick="goToLD()">Loom Def.</button>
-        <button onclick="goToEx()">Export</button>
+        <a href="/" class="Design" >Design</a>
+        <a href="#" class="goToWW" >Warp & Weft Def.</a>
+        <button class="goToSW">Simple Weaves</button>
+        <button class="goToCW">Combined Weaves</button>
+        <button class="goToLD">Loom Def.</button>
+        <button class="goToEx">Export</button>
     </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        alert("navbar")
+        $('.goToWW').click(function(){
+            alert("gotWW")
+        $.ajax(
+        {
+            type:"GET",
+            url: "/getValue/",
+            data:{
+                csrfmiddlewaretoken:'{{csrf_token}}',
+                'xx':'xx3'
+            },
+            success: function( data ) 
+            {
+                alert("ben çalıştım")
+                //window.href="/ww"
+                console.log(data)
+                alert(data)
+               
+               
+            }
+            
+         })
+        });
+        </script>
+
     {% block content %}{% endblock content %}
 
 </body>
