@@ -11,7 +11,7 @@ $.ajax(
     success: function( data ) 
     {
         alert("ben çalıştım")
-        //window.href="/ww"
+        window.location.href="/ww"
         console.log(data)
         alert(data)
 
