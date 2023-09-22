@@ -4,6 +4,8 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
+    print(request.POST)
+    print(request.GET)
     return render(request,'design/index.html')
 def dn(request):
     if request.method=='POST':
@@ -70,7 +72,9 @@ def ex(request):
         print("getex")
         return render(request,'design/ex.html')
 
-
+def update(request):
+    print(request.POST)
+    return HttpResponse({"updated":"updated"})
 
 
 

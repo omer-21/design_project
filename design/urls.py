@@ -14,6 +14,7 @@ urlpatterns = [
     path('ex/', ex, name='ex'),
     path('getValue/',getValue, name='getValue'),
     path('setww/',setww, name='setww'),
+    path('/update/',update, name='update'),
 
     
 ]
